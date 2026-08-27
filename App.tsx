@@ -49,7 +49,8 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.webWrapper}>
+      <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
       
       {/* Official Kiddo Q-Commerce Header */}
@@ -87,11 +88,24 @@ export default function App() {
           </View>
         )}
       </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  webWrapper: {
+    flex: 1,
+    width: '100%',
+    maxWidth: 480, // Matches standard mobile max-width bounds for Q-commerce sites
+    alignSelf: 'center',
+    backgroundColor: '#FFFFFF',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    elevation: 5,
+  },
   container: {
     flex: 1,
     backgroundColor: '#F7F8FA', // Soft Q-commerce bg
