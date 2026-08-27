@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StyleSheet, View, Text, ActivityIndicator, ImageBackground, Image } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text, ActivityIndicator, ImageBackground, Image, Platform } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts, Fredoka_700Bold, Fredoka_600SemiBold } from '@expo-google-fonts/fredoka';
 import { Nunito_400Regular, Nunito_600SemiBold, Nunito_700Bold } from '@expo-google-fonts/nunito';
@@ -97,14 +97,17 @@ const styles = StyleSheet.create({
   webWrapper: {
     flex: 1,
     width: '100%',
-    maxWidth: 480, // Matches standard mobile max-width bounds for Q-commerce sites
+    maxWidth: 480, // Matches standard mobile max-width bounds
     alignSelf: 'center',
+    marginHorizontal: Platform.OS === 'web' ? 'auto' : 0,
+    height: Platform.OS === 'web' ? '100vh' : '100%',
     backgroundColor: '#FFFFFF',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.15,
     shadowRadius: 20,
     elevation: 5,
+    overflow: 'hidden',
   },
   container: {
     flex: 1,
