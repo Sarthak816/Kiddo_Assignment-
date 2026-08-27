@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   appHeader: {
     paddingHorizontal: 16,
-    paddingTop: 48, // Add padding for status bar if not handled by SafeAreaView
+    paddingTop: Platform.OS === 'web' ? 16 : 48,
     paddingBottom: 16,
     backgroundColor: '#F7F8FA',
     borderBottomLeftRadius: 16,
@@ -126,12 +126,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   logo: {
-    height: 90,
-    width: 240,
-    marginLeft: -12, // Pull it slightly left so it aligns with padding if there's transparent space
+    height: 60,
+    width: 180,
   },
   locationContainer: {
     marginTop: 4,
